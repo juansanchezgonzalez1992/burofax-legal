@@ -1,0 +1,154 @@
+---
+const withoutLawyer = [
+  'Tú redactas el texto',
+  'Puedes olvidar datos importantes',
+  'El tono puede ser débil o inadecuado',
+  'La petición puede quedar poco clara',
+  'Haces el trámite, pero sin enfoque jurídico',
+];
+
+const withLawyer = [
+  'El texto lo redacta un abogado',
+  'La reclamación se estructura jurídicamente',
+  'Se cuidan hechos, cantidades, plazos y advertencias',
+  'El tono es firme, claro y profesional',
+  'El documento se prepara pensando en su posible utilidad posterior',
+];
+---
+
+<section class="comparison section section--surface" id="comparativa">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>Cualquiera puede enviar un burofax. La diferencia está en lo que dice.</h2>
+      <p class="section-subtitle">
+        El valor no está solo en tramitar el envío, sino en preparar una
+        comunicación clara, firme y útil para dejar constancia.
+      </p>
+    </div>
+
+    <div class="comparison__grid animate-on-scroll" data-animate="fade-up" data-delay="100">
+
+      <div class="comparison__col comparison__col--plain">
+        <h3 class="comparison__col-title">Enviar tú mismo</h3>
+        <ul class="comparison__list">
+          {withoutLawyer.map((item) => (
+            <li class="comparison__item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M5 5l8 8M13 5l-8 8" stroke="#C0392B" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="comparison__col comparison__col--featured">
+        <div class="comparison__featured-label">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M7 1l1.5 3.2L12 4.8l-2.5 2.4.6 3.4L7 9l-3.1 1.6.6-3.4L2 4.8l3.5-.6L7 1z" fill="currentColor"/>
+          </svg>
+          Burofax redactado por abogado
+        </div>
+        <h3 class="comparison__col-title">Con Burofax Legal</h3>
+        <ul class="comparison__list">
+          {withLawyer.map((item) => (
+            <li class="comparison__item comparison__item--positive">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M3.5 9l3.5 3.5 7.5-7.5" stroke="#27AE60" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="#contacto" class="btn btn--primary btn--full comparison__cta">Solicitar redacción y envío</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .comparison__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  .comparison__col {
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .comparison__col--plain {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .comparison__col--featured {
+    background: var(--color-surface);
+    border: 2px solid var(--color-gold);
+    border-top: 4px solid var(--color-gold);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .comparison__featured-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold);
+  }
+
+  .comparison__col-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.25;
+  }
+
+  .comparison__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    flex: 1;
+  }
+
+  .comparison__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .comparison__item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .comparison__item--positive span {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .comparison__cta {
+    margin-top: var(--space-2);
+  }
+
+  @media (min-width: 640px) {
+    .comparison__grid {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+    }
+  }
+</style>

@@ -1,0 +1,226 @@
+---
+const plans = [
+  {
+    id: 'estandar',
+    name: 'Servicio Estándar',
+    subtitle: 'Para reclamaciones con un único destinatario y caso claro.',
+    price: '179',
+    note: 'IVA incluido',
+    deadline: 'Plazo: 24/48 h laborables',
+    featured: false,
+    badge: null,
+    features: [
+      'Análisis básico del caso',
+      'Redacción jurídica del burofax',
+      'Revisión básica de datos del destinatario',
+      'Preparación y envío del burofax',
+      'Documentación acreditativa disponible',
+    ],
+    cta: 'Contratar estándar',
+    ctaClass: 'btn--outline',
+  },
+  {
+    id: 'urgente',
+    name: 'Servicio urgente / reforzado',
+    subtitle: 'Para deudas, alquileres impagados, incumplimientos contractuales o asuntos que requieren una redacción más estratégica.',
+    price: '249',
+    note: 'IVA incluido',
+    deadline: 'Mismo día laborable*',
+    featured: true,
+    badge: 'Recomendado si hay dinero en juego',
+    features: [
+      'Prioridad de revisión',
+      'Redacción jurídica reforzada',
+      'Mayor atención estratégica al tono y advertencias',
+      'Revisión básica de documentación aportada',
+      'Preparación y envío del burofax',
+      'Documentación acreditativa disponible',
+    ],
+    cta: 'Contratar reforzado',
+    ctaClass: 'btn--gold',
+  },
+];
+---
+
+<section class="pricing section section--surface" id="precios">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>Precio cerrado y sin sorpresas</h2>
+      <p class="section-subtitle">
+        El IVA ya está incluido. Sin costes ocultos ni presupuestos que luego cambian.
+      </p>
+    </div>
+
+    <div class="pricing__grid">
+      {plans.map((plan, i) => (
+        <div
+          class={`pricing__card animate-on-scroll${plan.featured ? ' pricing__card--featured' : ''}`}
+          data-animate="fade-up"
+          data-delay={String(i * 150)}
+        >
+          {plan.badge && (
+            <div class="pricing__badge">{plan.badge}</div>
+          )}
+
+          <div class="pricing__header">
+            <h3 class="pricing__name">{plan.name}</h3>
+            <p class="pricing__subtitle">{plan.subtitle}</p>
+            <div class="pricing__price-wrap">
+              <span class="pricing__amount">{plan.price}&nbsp;€</span>
+              <span class="pricing__vat">{plan.note}</span>
+            </div>
+            <p class="pricing__deadline">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 4.5V7l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              {plan.deadline}
+            </p>
+          </div>
+
+          <ul class="pricing__features feature-list feature-list--gold">
+            {plan.features.map((f) => (
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5 6.5-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <a href="#contacto" class={`btn ${plan.ctaClass} btn--full pricing__cta`}>
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <p class="pricing__legal animate-on-scroll" data-animate="fade-in" data-delay="200">
+      El precio cubre la redacción y envío del burofax. No incluye procedimiento judicial,
+      negociación posterior, contestaciones del destinatario ni asesoramiento jurídico
+      continuado, salvo contratación aparte.<br />
+      <small>(*) El servicio urgente se tramita el mismo día laborable si la documentación
+      está completa y se recibe con tiempo suficiente.</small>
+    </p>
+  </div>
+</section>
+
+<style>
+  .pricing__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    max-width: 860px;
+    margin-inline: auto;
+    margin-bottom: var(--space-10);
+    align-items: start;
+  }
+
+  .pricing__card {
+    position: relative;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .pricing__card--featured {
+    border: 2px solid var(--color-gold);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .pricing__badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-gold);
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+  }
+
+  .pricing__header {
+    padding-top: var(--space-2);
+  }
+
+  .pricing__name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .pricing__subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin-bottom: var(--space-4);
+  }
+
+  .pricing__price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .pricing__amount {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .pricing__vat {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .pricing__deadline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .pricing__features {
+    flex: 1;
+  }
+
+  .pricing__cta {
+    margin-top: auto;
+  }
+
+  .pricing__legal {
+    max-width: 680px;
+    margin-inline: auto;
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    padding: var(--space-4) var(--space-6);
+    background: rgba(247, 245, 242, 0.8);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  @media (min-width: 640px) {
+    .pricing__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing__card--featured {
+      transform: scale(1.02);
+    }
+  }
+</style>

@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Política de cookies | Burofax Legal"
+  description="Información sobre el uso de cookies en el sitio web Burofax Legal."
+>
+  <Header />
+  <main>
+    <div class="legal-page">
+      <div class="container">
+
+        <div class="legal-page__header">
+          <h1>Política de cookies</h1>
+          <p class="legal-page__date">Última actualización: mayo de 2025</p>
+        </div>
+
+        <div class="legal-page__body">
+
+          <p>
+            Este sitio web utiliza cookies y tecnologías similares para garantizar su correcto
+            funcionamiento y, en su caso, para analizar el tráfico. A continuación se detalla
+            qué cookies se utilizan y con qué finalidad.
+          </p>
+
+          <h2>1. ¿Qué es una cookie?</h2>
+          <p>
+            Una cookie es un pequeño archivo de texto que se almacena en el dispositivo del usuario
+            cuando visita un sitio web. Permite que el sitio recuerde determinadas preferencias o
+            acciones del usuario durante un período de tiempo.
+          </p>
+
+          <h2>2. Tipos de cookies utilizadas</h2>
+
+          <h3>Cookies técnicas o necesarias</h3>
+          <p>
+            Son imprescindibles para el funcionamiento básico del sitio web. No requieren
+            consentimiento del usuario. En este sitio se utilizan para gestionar la sesión
+            de navegación y recordar preferencias básicas.
+          </p>
+
+          <h3>Cookies analíticas</h3>
+          <p>
+            Permiten medir la audiencia y el comportamiento de los visitantes para mejorar
+            el sitio web. Solo se activan si el usuario otorga su consentimiento.
+          </p>
+
+          <h2>3. Tabla de cookies</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Cookie</th>
+                <th>Proveedor</th>
+                <th>Finalidad</th>
+                <th>Duración</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>_ga, _ga_*</td>
+                <td>Google Analytics</td>
+                <td>Analítica web — mide visitas y comportamiento</td>
+                <td>2 años</td>
+                <td>Analítica</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>4. Cookies de terceros</h2>
+          <p>
+            Este sitio puede incorporar funcionalidades de terceros que instalan sus propias
+            cookies. Los principales son:
+          </p>
+          <ul>
+            <li>
+              <strong>Google Analytics</strong> (Google LLC) — analítica web. Política de privacidad
+              de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+            </li>
+          </ul>
+
+          <h2>5. Cómo gestionar o desactivar las cookies</h2>
+          <p>
+            El usuario puede configurar su navegador para rechazar o eliminar cookies en cualquier
+            momento. Ten en cuenta que deshabilitar ciertas cookies puede afectar al funcionamiento
+            del sitio web. Instrucciones según navegador:
+          </p>
+          <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+            <li><a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener">Microsoft Edge</a></li>
+          </ul>
+
+          <h2>6. Actualizaciones de esta política</h2>
+          <p>
+            Esta política puede actualizarse cuando se incorporen nuevas cookies o cambien las
+            existentes. Se recomienda revisarla periódicamente.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-page { padding-block: var(--space-16) var(--space-20); background: var(--color-bg); min-height: 60vh; }
+  .legal-page__header { max-width: 760px; margin-inline: auto; margin-bottom: var(--space-10); padding-bottom: var(--space-8); border-bottom: 2px solid var(--color-gold); }
+  .legal-page__header h1 { font-family: var(--font-heading); font-size: var(--text-4xl); font-weight: 700; color: var(--color-primary); letter-spacing: var(--letter-spacing-heading); margin-bottom: var(--space-3); }
+  .legal-page__date { font-size: var(--text-sm); color: var(--color-text-muted); }
+  .legal-page__body { max-width: 760px; margin-inline: auto; }
+  .legal-page__body h2 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 600; color: var(--color-primary); margin-top: var(--space-10); margin-bottom: var(--space-4); padding-left: var(--space-4); border-left: 3px solid var(--color-gold); }
+  .legal-page__body h3 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 600; color: var(--color-primary); margin-top: var(--space-6); margin-bottom: var(--space-3); }
+  .legal-page__body p { font-size: var(--text-base); color: var(--color-text); line-height: 1.8; margin-bottom: var(--space-4); }
+  .legal-page__body p em { color: var(--color-text-muted); font-style: italic; }
+  .legal-page__body ul, .legal-page__body ol { margin-bottom: var(--space-4); padding-left: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); }
+  .legal-page__body li { font-size: var(--text-base); color: var(--color-text); line-height: 1.7; }
+  .legal-page__body strong { color: var(--color-primary); font-weight: 600; }
+  .legal-page__body a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+  .legal-page__body table { width: 100%; border-collapse: collapse; margin-bottom: var(--space-6); font-size: var(--text-sm); overflow-x: auto; display: block; }
+  .legal-page__body th { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); text-align: left; font-weight: 600; white-space: nowrap; }
+  .legal-page__body td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); color: var(--color-text); vertical-align: top; }
+  .legal-page__body tr:nth-child(even) td { background: var(--color-highlight); }
+</style>

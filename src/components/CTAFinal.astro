@@ -1,0 +1,118 @@
+---
+---
+
+<section class="cta-final section section--dark" aria-label="Llamada a la acción final">
+  <div class="container">
+    <div class="cta-final__inner animate-on-scroll" data-animate="fade-up">
+      <span class="cta-final__eyebrow">Actúa antes de que el tiempo juegue en tu contra</span>
+      <h2 class="cta-final__title">
+        Reclama formalmente sin improvisar el texto
+      </h2>
+      <p class="cta-final__subtitle">
+        Cuéntanos tu caso y prepararemos un burofax claro, firme y
+        jurídicamente orientado, con precio cerrado y tramitación online.
+      </p>
+
+      <div class="cta-final__buttons">
+        <a href="#contacto" class="btn btn--gold btn--lg">
+          Solicitar redacción y envío
+        </a>
+        <a href="#precios" class="btn btn--outline-white btn--lg">
+          Ver precios
+        </a>
+      </div>
+
+      <ul class="cta-final__mini" aria-label="Resumen de características">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 6-6" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Desde 179 € IVA incluido
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 6-6" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Plazo 24/48 h laborables
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 6-6" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sin compromiso inicial
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 6-6" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          100 % online
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-final {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-final__inner {
+    text-align: center;
+    max-width: 680px;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  .cta-final__eyebrow {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-final__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: var(--letter-spacing-heading);
+    line-height: 1.15;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-final__subtitle {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.65;
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-final__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+
+  .cta-final__mini {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2) var(--space-6);
+  }
+
+  .cta-final__mini li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+  }
+</style>

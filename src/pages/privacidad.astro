@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Política de privacidad | Burofax Legal"
+  description="Información sobre el tratamiento de datos personales en Burofax Legal, conforme al RGPD y la LOPDGDD."
+>
+  <Header />
+  <main>
+    <div class="legal-page">
+      <div class="container">
+
+        <div class="legal-page__header">
+          <h1>Política de privacidad</h1>
+          <p class="legal-page__date">Última actualización: mayo de 2025</p>
+        </div>
+
+        <div class="legal-page__body">
+
+          <p>
+            En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo
+            (RGPD) y de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos
+            Personales y garantía de los derechos digitales (LOPDGDD), se informa de la siguiente
+            política de tratamiento de datos personales.
+          </p>
+
+          <h2>1. Responsable del tratamiento</h2>
+          <ul>
+            <li><strong>Titular:</strong> Juan Sánchez González</li>
+            <li><strong>NIF:</strong> 14314142T</li>
+            <li><strong>Domicilio:</strong> Plaza Padre Damián Nº 2, 6º Izq., Albacete</li>
+            <li><strong>Correo electrónico:</strong> juansanchezgonzalez@gmail.com</li>
+          </ul>
+
+          <h2>2. Datos que recopilamos</h2>
+          <p>Recopilamos los datos que el usuario nos facilita voluntariamente a través de:</p>
+          <ul>
+            <li>
+              <strong>Formulario de contacto:</strong> nombre, correo electrónico, teléfono
+              (opcional), tipo de asunto, resumen del caso y plan solicitado.
+            </li>
+            <li>
+              <strong>Formulario de suscripción al recurso gratuito:</strong> nombre (opcional)
+              y correo electrónico.
+            </li>
+            <li>
+              <strong>Comunicaciones directas</strong> por email o WhatsApp iniciadas por el usuario.
+            </li>
+          </ul>
+          <p>No recopilamos datos de categorías especiales (datos de salud, ideología, etc.).</p>
+
+          <h2>3. Finalidades y base jurídica</h2>
+          <ul>
+            <li>
+              <strong>Gestión de solicitudes del servicio:</strong> valorar el caso y prestar
+              el servicio contratado. Base jurídica: ejecución del contrato (art. 6.1.b RGPD).
+            </li>
+            <li>
+              <strong>Respuesta a consultas:</strong> atender las preguntas recibidas antes de la
+              contratación. Base jurídica: interés legítimo (art. 6.1.f RGPD).
+            </li>
+            <li>
+              <strong>Envío del recurso gratuito y comunicaciones relacionadas:</strong> remitir
+              el material solicitado y, en su caso, información sobre el servicio. Base jurídica:
+              consentimiento del interesado (art. 6.1.a RGPD).
+            </li>
+          </ul>
+
+          <h2>4. Plazo de conservación</h2>
+          <p>
+            Los datos se conservarán durante el tiempo necesario para atender la solicitud y,
+            una vez finalizada la relación, durante los plazos legalmente exigibles para atender
+            posibles responsabilidades. Los datos de suscriptores se conservarán hasta que el
+            interesado solicite la baja.
+          </p>
+
+          <h2>5. Destinatarios de los datos</h2>
+          <p>
+            Los datos no se ceden a terceros, salvo obligación legal o los encargados de
+            tratamiento estrictamente necesarios para la prestación del servicio:
+          </p>
+          <ul>
+            <li>
+              <strong>Formspree Inc.</strong> — proveedor del formulario de contacto, con sede
+              en EE. UU. (adecuación mediante cláusulas contractuales tipo).
+            </li>
+            <li>
+              <strong>Brevo (Sendinblue SAS)</strong> — plataforma de email marketing, con sede
+              en Francia (dentro de la UE).
+            </li>
+          </ul>
+
+          <h2>6. Derechos del interesado</h2>
+          <p>
+            El interesado puede ejercer en cualquier momento los siguientes derechos dirigiéndose
+            por escrito a <strong>juansanchezgonzalez@gmail.com</strong>, indicando su nombre y adjuntando
+            copia de su documento de identidad:
+          </p>
+          <ul>
+            <li><strong>Acceso:</strong> conocer qué datos se tratan.</li>
+            <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
+            <li><strong>Supresión:</strong> solicitar la eliminación de los datos.</li>
+            <li><strong>Oposición:</strong> oponerse al tratamiento basado en interés legítimo.</li>
+            <li><strong>Limitación:</strong> solicitar la restricción del tratamiento.</li>
+            <li><strong>Portabilidad:</strong> recibir los datos en formato estructurado.</li>
+            <li>
+              <strong>Retirada del consentimiento:</strong> en cualquier momento, sin que afecte
+              a la licitud del tratamiento previo.
+            </li>
+          </ul>
+          <p>
+            Si considera que sus derechos no han sido atendidos correctamente, puede presentar
+            una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).
+          </p>
+
+          <h2>7. Seguridad</h2>
+          <p>
+            Se aplican medidas técnicas y organizativas adecuadas para garantizar la seguridad
+            de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no
+            autorizado.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding-block: var(--space-16) var(--space-20);
+    background: var(--color-bg);
+    min-height: 60vh;
+  }
+  .legal-page__header {
+    max-width: 760px;
+    margin-inline: auto;
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-8);
+    border-bottom: 2px solid var(--color-gold);
+  }
+  .legal-page__header h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: var(--letter-spacing-heading);
+    margin-bottom: var(--space-3);
+  }
+  .legal-page__date {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  .legal-page__body {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+  .legal-page__body h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-4);
+    border-left: 3px solid var(--color-gold);
+  }
+  .legal-page__body h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+  .legal-page__body p {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+  }
+  .legal-page__body ul,
+  .legal-page__body ol {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .legal-page__body li {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+  .legal-page__body strong {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  .legal-page__body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-6);
+    font-size: var(--text-sm);
+  }
+  .legal-page__body th {
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    font-weight: 600;
+  }
+  .legal-page__body td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    vertical-align: top;
+  }
+  .legal-page__body tr:nth-child(even) td {
+    background: var(--color-highlight);
+  }
+</style>

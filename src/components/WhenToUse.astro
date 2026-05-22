@@ -1,0 +1,97 @@
+---
+const checks = [
+  'Te deben dinero y quieres reclamar formalmente',
+  'Tu inquilino no paga',
+  'Una empresa no responde',
+  'Hay un incumplimiento de contrato',
+  'Quieres reclamar una fianza o cantidad pendiente',
+  'Necesitas dejar constancia antes de posibles acciones legales',
+  'Quieres evitar mensajes informales sin suficiente valor probatorio',
+];
+---
+
+<section class="when section" id="cuando-usarlo">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>Cuándo merece la pena enviar un burofax redactado por abogado</h2>
+      <p class="section-subtitle">
+        Este servicio está pensado para situaciones en las que no conviene improvisar
+        una reclamación informal y necesitas dejar constancia clara de tu posición.
+      </p>
+    </div>
+
+    <ul class="when__grid animate-on-scroll" data-animate="fade-up" data-delay="100">
+      {checks.map((item) => (
+        <li class="when__item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="9" fill="rgba(201,168,76,0.12)"/>
+            <path d="M6 10l3 3 5-5" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+
+    <blockquote class="when__callout animate-on-scroll" data-animate="fade-in" data-delay="150">
+      <p>
+        "Si solo necesitas mandar una comunicación informal, quizá no necesitas este servicio.
+        Si quieres reclamar con seriedad, sí."
+      </p>
+      <a href="#contacto" class="btn btn--primary when__cta">Solicitar redacción y envío</a>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .when__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    max-width: 780px;
+    margin-inline: auto;
+    margin-bottom: var(--space-10);
+  }
+
+  .when__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .when__item svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .when__callout {
+    max-width: 680px;
+    margin-inline: auto;
+    border-top: 3px solid var(--color-gold);
+    padding: var(--space-6) var(--space-8);
+    background: var(--color-highlight);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .when__callout p {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-style: italic;
+    color: var(--color-primary);
+    line-height: 1.55;
+  }
+
+  @media (min-width: 640px) {
+    .when__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

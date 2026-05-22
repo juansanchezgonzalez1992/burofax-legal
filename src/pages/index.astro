@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import UseCases from '../components/UseCases.astro';
+import WhenToUse from '../components/WhenToUse.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import Pricing from '../components/Pricing.astro';
+import Comparison from '../components/Comparison.astro';
+import Guarantees from '../components/Guarantees.astro';
+import ProfessionalTrust from '../components/ProfessionalTrust.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import LeadMagnet from '../components/LeadMagnet.astro';
+import CTAFinal from '../components/CTAFinal.astro';
+import Footer from '../components/Footer.astro';
+import MobileStickyCTA from '../components/MobileStickyCTA.astro';
+---
+
+<BaseLayout
+  title="Burofax redactado por abogado online | Redacción y envío desde 179 €"
+  description="Servicio online de redacción jurídica y envío de burofax por abogado. Reclama deudas, alquileres impagados e incumplimientos con precio cerrado y tramitación online."
+  ogImage="/og-image.svg"
+>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <TrustBar />
+    <UseCases />
+    <WhenToUse />
+    <ProblemSection />
+    <ProcessSteps />
+    <Pricing />
+    <Comparison />
+    <Guarantees />
+    <ProfessionalTrust />
+    <Testimonials />
+    <ContactForm />
+    <LeadMagnet />
+    <FAQ />
+    <CTAFinal />
+  </main>
+  <MobileStickyCTA />
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,223 @@
+---
+---
+
+<header class="site-header" id="site-header">
+  <div class="container header__inner">
+    <a href="/" class="header__logo" aria-label="Burofax Legal — Inicio">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" class="header__logo-icon">
+        <rect width="22" height="22" rx="4" fill="#1B2B4B"/>
+        <path d="M5 7h12M5 11h8M5 15h10" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="header__logo-text">Burofax Legal</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Navegación principal">
+      <ul class="header__nav-list">
+        <li><a href="/#servicio" class="header__nav-link">Servicio</a></li>
+        <li><a href="/#casos" class="header__nav-link">Casos de uso</a></li>
+        <li><a href="/#como-funciona" class="header__nav-link">Cómo funciona</a></li>
+        <li><a href="/#precios" class="header__nav-link">Precios</a></li>
+        <li><a href="/#faq" class="header__nav-link">FAQ</a></li>
+        <li><a href="/contacto" class="header__nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a href="/contacto" class="btn btn--gold btn--sm header__cta">Solicitar burofax</a>
+
+    <button
+      class="header__hamburger"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="hamburger-open" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg class="hamburger-close" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" style="display:none">
+        <path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="header__mobile-menu" hidden>
+    <nav aria-label="Menú móvil">
+      <ul class="mobile-nav-list">
+        <li><a href="/#servicio"       class="mobile-nav-link">Servicio</a></li>
+        <li><a href="/#casos"          class="mobile-nav-link">Casos de uso</a></li>
+        <li><a href="/#como-funciona"  class="mobile-nav-link">Cómo funciona</a></li>
+        <li><a href="/#precios"        class="mobile-nav-link">Precios</a></li>
+        <li><a href="/#faq"            class="mobile-nav-link">FAQ</a></li>
+        <li><a href="/contacto"        class="mobile-nav-link">Contacto</a></li>
+      </ul>
+      <a href="/contacto" class="btn btn--gold btn--full mobile-cta">Solicitar burofax</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    transition: box-shadow var(--transition-base);
+  }
+
+  .site-header.is-scrolled {
+    box-shadow: var(--shadow-md);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    height: 68px;
+  }
+
+  /* Logo */
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .header__logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .header__logo-icon {
+    flex-shrink: 0;
+  }
+
+  /* Nav desktop */
+  .header__nav {
+    display: none;
+    margin-left: auto;
+  }
+
+  .header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .header__nav-link:hover {
+    color: var(--color-primary);
+    background-color: rgba(27, 43, 75, 0.05);
+  }
+
+  /* CTA desktop */
+  .header__cta {
+    display: none;
+    flex-shrink: 0;
+    margin-left: var(--space-2);
+  }
+
+  /* Hamburger */
+  .header__hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    color: var(--color-primary);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+  }
+
+  .header__hamburger:hover {
+    background-color: rgba(27, 43, 75, 0.06);
+  }
+
+  /* Mobile menu */
+  .header__mobile-menu {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-surface);
+    padding: var(--space-4) var(--container-padding) var(--space-6);
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: var(--space-3) var(--space-2);
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover {
+    background-color: rgba(27, 43, 75, 0.05);
+    color: var(--color-primary);
+  }
+
+  .mobile-cta {
+    margin-top: var(--space-2);
+  }
+
+  /* Desktop breakpoint */
+  @media (min-width: 1024px) {
+    .header__nav  { display: block; }
+    .header__cta  { display: inline-flex; }
+    .header__hamburger { display: none; }
+    .header__inner { gap: var(--space-4); }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  const btn    = document.querySelector('.header__hamburger') as HTMLButtonElement;
+  const menu   = document.getElementById('mobile-menu');
+  const openIcon  = btn?.querySelector('.hamburger-open') as HTMLElement;
+  const closeIcon = btn?.querySelector('.hamburger-close') as HTMLElement;
+
+  /* Scroll shadow */
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('is-scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* Hamburger toggle */
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu!.hidden;
+    menu!.hidden = isOpen;
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    openIcon.style.display  = isOpen ? '' : 'none';
+    closeIcon.style.display = isOpen ? 'none' : '';
+  });
+
+  /* Cerrar menú al hacer clic en un enlace */
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      openIcon.style.display  = '';
+      closeIcon.style.display = 'none';
+    });
+  });
+</script>

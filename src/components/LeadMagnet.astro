@@ -1,0 +1,252 @@
+---
+const errors = [
+  'Reclamar por WhatsApp o de forma verbal sin dejar constancia escrita',
+  'No indicar un plazo concreto al destinatario para resolver la situación',
+  'No especificar la cantidad exacta que se reclama',
+  'Usar un tono que puede volverse en tu contra jurídicamente',
+  'No identificar correctamente al destinatario',
+  'No guardar copia de todas las comunicaciones previas',
+  'Esperar demasiado y acercarte a la prescripción de la acción',
+];
+---
+
+<section class="lm section section--dark" aria-label="Recurso gratuito">
+  <div class="container">
+    <div class="lm__inner animate-on-scroll" data-animate="fade-up">
+
+      <div class="lm__content">
+        <span class="lm__eyebrow">Recurso gratuito</span>
+        <h2 class="lm__title">7 errores que cometes al reclamar informalmente</h2>
+        <p class="lm__subtitle">
+          Checklist en PDF. Revisa si estás cometiendo alguno de estos errores
+          antes de enviar tu próxima reclamación.
+        </p>
+
+        <ul class="lm__list">
+          {errors.slice(0, 4).map((e) => (
+            <li class="lm__list-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5L13 4.5" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{e}</span>
+            </li>
+          ))}
+          <li class="lm__list-item lm__list-item--blur" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>y 3 más en el PDF completo…</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lm__form-wrap">
+        <p class="lm__form-label">Recíbelo ahora en tu email</p>
+
+        <!--
+        -->
+        <form
+          class="lm__form"
+          action="https://a691a41d.sibforms.com/serve/MUIFAM4VBb5kYSb3W8miaDAiGJzB5uSEKpO8SNnpadswXlDXYawaIH24yl8gaWNSuqpjgOApHBfQKOYotyv5TBEIqCYtn0BHox8KFaN5uAbQ1vTul3iSyTFVRBRjrj5ETc7hnmeVTvTKSXluifTzGx2c_kc1uuRals63YOFDRd-Zy1ObPfsxnSfpIdkDd41H8TotKW08vK_yY7COxw=="
+          method="POST"
+          novalidate
+          id="lead-magnet-form"
+        >
+          <input type="hidden" name="EMAIL_TYPE" value="html" />
+          <input type="hidden" name="locale" value="es" />
+
+          <div class="lm__field">
+            <label for="lm-name" class="lm__field-label">Nombre</label>
+            <input
+              type="text"
+              id="lm-name"
+              name="FIRSTNAME"
+              class="lm__input"
+              placeholder="Tu nombre"
+              autocomplete="given-name"
+            />
+          </div>
+
+          <div class="lm__field">
+            <label for="lm-email" class="lm__field-label">Email <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="lm-email"
+              name="EMAIL"
+              class="lm__input"
+              placeholder="correo@ejemplo.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <button type="submit" class="btn btn--gold btn--full lm__submit">
+            Enviarme el checklist gratis
+          </button>
+
+          <p class="lm__legal">
+            Sin spam. Puedes darte de baja cuando quieras.
+            Tratamiento conforme al RGPD.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .lm {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lm::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .lm__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: center;
+  }
+
+  .lm__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-3);
+  }
+
+  .lm__eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-gold);
+    border-radius: 2px;
+  }
+
+  .lm__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: var(--letter-spacing-heading);
+    line-height: 1.15;
+    margin-bottom: var(--space-4);
+  }
+
+  .lm__subtitle {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.65;
+    margin-bottom: var(--space-6);
+  }
+
+  .lm__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .lm__list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+  }
+
+  .lm__list-item svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .lm__list-item--blur span {
+    filter: blur(3.5px);
+    user-select: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+  }
+
+  /* Form */
+  .lm__form-wrap {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--color-gold);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .lm__form-label {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-6);
+  }
+
+  .lm__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .lm__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .lm__field-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .lm__input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .lm__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(27, 43, 75, 0.12);
+  }
+
+  .lm__submit {
+    margin-top: var(--space-2);
+  }
+
+  .lm__legal {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 1024px) {
+    .lm__inner {
+      grid-template-columns: 1fr 420px;
+      gap: var(--space-16);
+    }
+  }
+</style>

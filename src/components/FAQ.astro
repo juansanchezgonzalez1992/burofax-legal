@@ -1,0 +1,230 @@
+---
+const faqs = [
+  {
+    q: '¿Un burofax redactado por abogado garantiza que me paguen?',
+    a: 'No. El burofax no garantiza el cobro ni el resultado del conflicto. Su utilidad está en dejar constancia formal de la reclamación, reforzar tu posición jurídica y generar una prueba documental que puede ser útil posteriormente.',
+  },
+  {
+    q: '¿Puedo enviar yo mismo un burofax sin asesoramiento?',
+    a: 'Sí, puedes hacerlo. La diferencia principal está en la redacción. Aquí el burofax se prepara con criterio jurídico, cuidando hechos, cantidades, plazos, tono y finalidad de la comunicación. Un texto bien redactado tiene más peso que uno improvisado.',
+  },
+  {
+    q: '¿Cuánto tarda el servicio?',
+    a: 'El plazo habitual del servicio estándar es de 24 a 48 horas laborables desde que disponemos de toda la información necesaria. El servicio urgente se tramita el mismo día laborable cuando la documentación está completa y se recibe con tiempo suficiente.',
+  },
+  {
+    q: '¿Qué documentación necesito aportar?',
+    a: 'Tus datos identificativos, los datos del destinatario, una explicación clara del problema y, si existe, documentación relacionada: contratos, facturas, justificantes de pago, mensajes o requerimientos previos. No es imprescindible tener documentación para contratar el servicio.',
+  },
+  {
+    q: '¿Puedo revisar el texto antes de que se envíe?',
+    a: 'Sí. El cliente podrá revisar el borrador antes del envío definitivo. En el servicio urgente, si se solicita máxima celeridad y el cliente acepta expresamente, se puede abreviar esta fase.',
+  },
+  {
+    q: '¿El precio incluye el envío postal del burofax?',
+    a: 'Sí. El precio cerrado incluye la redacción jurídica y el envío del burofax. No hay costes adicionales por el envío ni sorpresas en la factura.',
+  },
+  {
+    q: '¿En qué se diferencia el servicio estándar del urgente?',
+    a: 'El servicio urgente incluye prioridad de revisión, redacción reforzada con mayor atención estratégica al tono, las advertencias y la finalidad jurídica del burofax, revisión básica de documentación aportada y tramitación el mismo día laborable. El servicio estándar cubre la redacción jurídica completa y el envío en 24/48 h.',
+  },
+  {
+    q: '¿Puedo contratarlo aunque esté en otra ciudad?',
+    a: 'Sí. El servicio se tramita online, sin desplazamientos.',
+  },
+  {
+    q: '¿Cuándo conviene elegir el plan reforzado?',
+    a: 'Cuando hay una deuda relevante, alquileres impagados, incumplimientos contractuales, documentación que revisar o necesidad de una comunicación especialmente cuidada.',
+  },
+  {
+    q: '¿Qué ocurre si el destinatario no recoge el burofax?',
+    a: 'Dependerá del caso concreto y de la forma de tramitación, pero el intento de notificación y la documentación generada pueden tener relevancia. Si este punto es importante para tu asunto, se valorará antes de enviar.',
+  },
+];
+---
+
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>Preguntas frecuentes</h2>
+      <p class="section-subtitle">
+        Respuestas directas a las dudas más habituales sobre el servicio.
+      </p>
+    </div>
+
+    <div class="faq__list animate-on-scroll" data-animate="fade-up" data-delay="100">
+      {faqs.map((item, i) => (
+        <details class={`faq__item${i >= 6 ? ' faq__item--hidden' : ''}`}>
+          <summary class="faq__question">
+            <span class="faq__question-text">{item.q}</span>
+            <svg
+              class="faq__icon"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 8l5 5 5-5"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </summary>
+          <div class="faq__answer">
+            <p>{item.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="faq__expand-wrap animate-on-scroll" data-animate="fade-in" data-delay="100">
+      <button class="faq__expand-btn" id="faq-expand-btn" aria-expanded="false">
+        Ver más preguntas
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <p class="faq__more animate-on-scroll" data-animate="fade-in" data-delay="100">
+      ¿Tienes otra pregunta?
+      <a href="#contacto" class="faq__more-link">Consúltanos directamente →</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .faq__list {
+    max-width: 780px;
+    margin-inline: auto;
+    margin-bottom: var(--space-10);
+  }
+
+  .faq__item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq__item:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5) 0;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  /* Elimina triángulo nativo */
+  .faq__question::-webkit-details-marker { display: none; }
+  .faq__question::marker { display: none; }
+
+  .faq__question-text {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.4;
+  }
+
+  .faq__icon {
+    flex-shrink: 0;
+    color: var(--color-gold);
+    transition: transform var(--transition-base);
+  }
+
+  details[open] .faq__icon {
+    transform: rotate(180deg);
+  }
+
+  .faq__question:hover .faq__question-text {
+    color: var(--color-gold);
+  }
+
+  .faq__answer {
+    padding-bottom: var(--space-5);
+    padding-right: calc(20px + var(--space-4));
+  }
+
+  .faq__answer p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+
+  .faq__more {
+    text-align: center;
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+  }
+
+  .faq__more-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--color-gold);
+    text-underline-offset: 3px;
+  }
+
+  .faq__item--hidden {
+    display: none;
+  }
+
+  .faq__expand-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .faq__expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    background: transparent;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .faq__expand-btn:hover {
+    border-color: var(--color-primary);
+    background: rgba(27, 43, 75, 0.04);
+  }
+
+  .faq__expand-btn svg {
+    transition: transform var(--transition-base);
+  }
+
+  .faq__expand-btn[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  .faq__expand-btn[aria-expanded="true"] {
+    display: none;
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('faq-expand-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.faq__item--hidden').forEach(el => {
+        (el as HTMLElement).style.display = 'block';
+      });
+      btn.setAttribute('aria-expanded', 'true');
+    });
+  }
+</script>

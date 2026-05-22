@@ -1,0 +1,162 @@
+---
+const cases = [
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 8h24M4 8v18h24V8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M11 8V6a2 2 0 014 0v2M17 8V6a2 2 0 014 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9 17l2.5 2.5L20 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    title: 'Reclamación de deuda',
+    body: 'Cuando alguien te debe dinero y necesitas dejar constancia formal de la reclamación antes de actuar.',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 26V10l10-6 10 6v16H6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><rect x="12" y="18" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.8"/></svg>`,
+    title: 'Impago de alquiler',
+    body: 'Requerimiento formal al arrendatario por rentas pendientes, cuidando los efectos jurídicos de la comunicación.',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 6h16a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8"/><path d="M11 12h10M11 16h6M11 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+    title: 'Incumplimiento de contrato',
+    body: 'Comunica formalmente un incumplimiento y exige solución, cumplimiento o respuesta con valor probatorio.',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.8"/><path d="M16 10v6l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    title: 'Devolución de cantidades',
+    body: 'Reclama importes entregados, fianzas, pagos indebidos o cantidades pendientes dejando constancia formal.',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M20 6H12a2 2 0 00-2 2v16a2 2 0 002 2h8a2 2 0 002-2V8a2 2 0 00-2-2z" stroke="currentColor" stroke-width="1.8"/><path d="M8 10H6a2 2 0 00-2 2v6a2 2 0 002 2h2" stroke="currentColor" stroke-width="1.8"/><path d="M14 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+    title: 'Reclamación a empresa',
+    body: 'Dirige una comunicación formal a una empresa, proveedor, entidad o profesional con plenas garantías jurídicas.',
+  },
+  {
+    icon: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4L4 10v10l12 8 12-8V10L16 4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 4v18M4 10l12 6 12-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+    title: 'Comunicación previa a acciones legales',
+    body: 'Deja constancia de tu posición antes de iniciar una reclamación judicial o extrajudicial. Prepara el terreno.',
+  },
+];
+---
+
+<section class="use-cases section" id="casos">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>¿Cuál es tu situación?</h2>
+      <p class="section-subtitle">
+        Cada caso se revisa antes de redactar. Si el asunto requiere una
+        intervención jurídica más amplia, te informamos previamente.
+      </p>
+    </div>
+
+    <div class="use-cases__grid">
+      {cases.map((item, i) => (
+        <article
+          class="use-case-card animate-on-scroll"
+          data-animate="fade-up"
+          data-delay={String((i % 3) * 100)}
+        >
+          <span class="use-case-card__icon" set:html={item.icon} />
+          <h3 class="use-case-card__title">{item.title}</h3>
+          <p class="use-case-card__body">{item.body}</p>
+          <a href="#contacto" class="use-case-card__link">
+            Solicitar para este caso
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7.5 4.5L10 7l-2.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <p class="use-cases__note animate-on-scroll" data-animate="fade-in" data-delay="100">
+      ¿Tu caso no está en la lista?
+      <a href="#contacto" class="use-cases__note-link">Consúltanos sin compromiso →</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .use-cases__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    margin-bottom: var(--space-10);
+  }
+
+  .use-case-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+    color: var(--color-text);
+  }
+
+  .use-case-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+
+  .use-case-card__icon {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    opacity: 0.8;
+  }
+
+  .use-case-card__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+    line-height: 1.25;
+  }
+
+  .use-case-card__body {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: var(--space-4);
+  }
+
+  .use-case-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+    text-decoration: none;
+    margin-top: auto;
+    transition: gap var(--transition-fast), color var(--transition-fast);
+  }
+
+  .use-case-card:hover .use-case-card__link {
+    gap: var(--space-2);
+    color: #8B6914;
+  }
+
+  .use-cases__note {
+    text-align: center;
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+  }
+
+  .use-cases__note-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--color-gold);
+    text-underline-offset: 3px;
+  }
+
+  @media (min-width: 640px) {
+    .use-cases__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .use-cases__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

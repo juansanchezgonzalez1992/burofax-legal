@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contacto | Burofax Legal"
+  description="Contacta con Burofax Legal para solicitar la redacción y envío de un burofax por abogado. Disponible por formulario y WhatsApp."
+>
+  <Header />
+  <main>
+    <section class="contact-page section" aria-label="Contacto">
+      <div class="container">
+
+        <div class="section-header">
+          <h1 class="contact-page__title">Contacto</h1>
+          <p class="section-subtitle">
+            Cuéntanos tu caso. Sin compromiso inicial.
+          </p>
+        </div>
+
+        <div class="contact-page__layout">
+
+          <!-- Info lateral -->
+          <div class="contact-page__info">
+
+            <div class="contact-page__block">
+              <h2 class="contact-page__block-title">WhatsApp</h2>
+              <p class="contact-page__block-text">
+                La forma más rápida de contactar. Respuesta en horario laboral.
+              </p>
+              <a
+                href="https://wa.me/34664289594"
+                class="contact-page__whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 1.5C5.306 1.5 1.5 5.306 1.5 10c0 1.5.393 2.91 1.08 4.13L1.5 18.5l4.5-1.07A8.46 8.46 0 0010 18.5c4.694 0 8.5-3.806 8.5-8.5S14.694 1.5 10 1.5z" fill="#25D366"/>
+                  <path d="M13.5 11.5c-.2-.1-1.2-.6-1.4-.65-.2-.05-.34-.1-.48.1-.14.2-.54.65-.66.78-.12.13-.24.15-.44.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.1-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.24.3-.36.1-.12.13-.2.2-.33.06-.13.03-.25-.02-.35-.05-.1-.48-1.16-.66-1.59-.17-.41-.35-.36-.48-.36h-.41c-.14 0-.36.05-.55.25-.19.2-.72.7-.72 1.71s.74 1.98.84 2.12c.1.13 1.45 2.21 3.52 3.1.49.21.87.34 1.17.43.49.16.94.13 1.29.08.39-.06 1.2-.49 1.37-.96.17-.47.17-.87.12-.96-.05-.08-.19-.13-.39-.23z" fill="#fff"/>
+                </svg>
+                664 289 594
+              </a>
+            </div>
+
+            <div class="contact-page__block">
+              <h2 class="contact-page__block-title">Email</h2>
+              <p class="contact-page__block-text">
+                Para consultas que prefieran comunicación escrita formal.
+              </p>
+              <a href="mailto:juansanchezgonzalez@gmail.com" class="contact-page__email">
+                juansanchezgonzalez@gmail.com
+              </a>
+            </div>
+
+            <div class="contact-page__block">
+              <h2 class="contact-page__block-title">Horario</h2>
+              <p class="contact-page__block-text">
+                Lunes a viernes, en horario laboral.<br />
+                Respuesta en el mismo día laborable en la mayoría de los casos.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Formulario -->
+          <div class="contact-page__form-wrap">
+            <h2 class="contact-page__form-title">Escríbenos tu caso</h2>
+            <p class="contact-page__form-subtitle">
+              Revisamos la información y te confirmamos cómo procedemos antes de empezar.
+            </p>
+
+            <form
+              class="contact-page__form"
+              action="https://formspree.io/f/mqejbjzo"
+              method="POST"
+              novalidate
+            >
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="_subject" value="Consulta desde página de contacto" />
+
+              <div class="form__row form__row--2">
+                <div class="form__group">
+                  <label for="c-nombre" class="form__label">Nombre <span aria-hidden="true">*</span></label>
+                  <input type="text" id="c-nombre" name="nombre" class="form__input" required autocomplete="name" placeholder="Tu nombre" />
+                </div>
+                <div class="form__group">
+                  <label for="c-email" class="form__label">Email <span aria-hidden="true">*</span></label>
+                  <input type="email" id="c-email" name="email" class="form__input" required autocomplete="email" placeholder="correo@ejemplo.com" />
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label for="c-mensaje" class="form__label">Mensaje <span aria-hidden="true">*</span></label>
+                <textarea id="c-mensaje" name="mensaje" class="form__textarea" rows="5" required placeholder="Cuéntanos brevemente tu caso o consulta"></textarea>
+              </div>
+
+              <div class="form__group form__group--checkbox">
+                <input type="checkbox" id="c-privacidad" name="acepta_privacidad" class="form__checkbox" required value="acepta" />
+                <label for="c-privacidad" class="form__label form__label--checkbox">
+                  Acepto la <a href="/privacidad" class="form__link">política de privacidad</a>. <span aria-hidden="true">*</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--lg btn--full">
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contact-page {
+    background: var(--color-bg);
+  }
+
+  .contact-page__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: var(--letter-spacing-heading);
+    margin-bottom: var(--space-3);
+  }
+
+  .contact-page__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: start;
+    margin-top: var(--space-10);
+  }
+
+  /* Info */
+  .contact-page__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .contact-page__block {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-gold);
+  }
+
+  .contact-page__block-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .contact-page__block-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-page__whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(37, 211, 102, 0.07);
+    border: 1.5px solid rgba(37, 211, 102, 0.5);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+  }
+
+  .contact-page__whatsapp:hover {
+    background: rgba(37, 211, 102, 0.14);
+  }
+
+  .contact-page__email {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-gold);
+  }
+
+  /* Formulario */
+  .contact-page__form-wrap {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--color-gold);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contact-page__form-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .contact-page__form-subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+    line-height: 1.6;
+  }
+
+  .contact-page__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .form__row { display: grid; grid-template-columns: 1fr; gap: var(--space-5); }
+  .form__group { display: flex; flex-direction: column; gap: var(--space-2); }
+  .form__label { font-size: var(--text-sm); font-weight: 600; color: var(--color-primary); }
+  .form__input, .form__textarea {
+    width: 100%; padding: var(--space-3) var(--space-4);
+    border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
+    background: var(--color-surface); font-size: var(--text-base); color: var(--color-text);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .form__textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+  .form__input:focus, .form__textarea:focus {
+    outline: none; border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(27, 43, 75, 0.12);
+  }
+  .form__group--checkbox { flex-direction: row; align-items: flex-start; gap: var(--space-3); }
+  .form__checkbox { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--color-primary); cursor: pointer; }
+  .form__label--checkbox { font-size: var(--text-sm); font-weight: 400; color: var(--color-text-muted); cursor: pointer; line-height: 1.5; }
+  .form__link { color: var(--color-primary); text-decoration: underline; text-underline-offset: 2px; }
+
+  @media (min-width: 640px) {
+    .form__row--2 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .contact-page__layout {
+      grid-template-columns: 340px 1fr;
+      gap: var(--space-16);
+    }
+  }
+</style>

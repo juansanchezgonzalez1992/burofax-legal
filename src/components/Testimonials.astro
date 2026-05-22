@@ -1,0 +1,124 @@
+---
+/*
+  TODO: Reemplazar estos placeholders con testimonios reales en cuanto
+  tengas los primeros clientes. Pide permiso explícito antes de publicar
+  el nombre completo — con nombre + inicial del apellido + tipo de caso es suficiente.
+*/
+const testimonials = [
+  {
+    quote: 'Llevaba semanas intentando resolver la situación por mi cuenta. Con el burofax quedó todo documentado y la cosa se desbloqueó en pocos días.',
+    name: 'M. G.',
+    case: 'Reclamación de deuda',
+    location: 'Madrid',
+  },
+  {
+    quote: 'No sabía cómo redactar la reclamación sin cometer errores. El texto que prepararon era claro, firme y explicaba exactamente lo que necesitaba.',
+    name: 'R. S.',
+    case: 'Impago de alquiler',
+    location: 'Barcelona',
+  },
+  {
+    quote: 'El servicio fue rápido y el proceso muy sencillo. Recibí el borrador para revisar antes del envío y pude confirmar que todo estaba correcto.',
+    name: 'A. L.',
+    case: 'Incumplimiento contractual',
+    location: 'Valencia',
+  },
+];
+---
+
+<section class="testimonials section section--dark" id="opiniones">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>Lo que dicen quienes han usado el servicio</h2>
+      <p class="section-subtitle">
+        Casos reales de personas que necesitaban reclamar formalmente y no
+        querían improvisar el texto.
+      </p>
+    </div>
+
+    <div class="testimonials__grid">
+      {testimonials.map((t, i) => (
+        <figure
+          class="testimonials__card animate-on-scroll"
+          data-animate="fade-up"
+          data-delay={String(i * 120)}
+        >
+          <svg class="testimonials__quote-mark" width="32" height="24" viewBox="0 0 32 24" fill="none" aria-hidden="true">
+            <path d="M0 24V14.4C0 6.4 4.267 1.6 12.8 0l1.6 2.4C10.133 3.6 7.733 6.133 7.2 10H13V24H0zm18 0V14.4C18 6.4 22.267 1.6 30.8 0l1.6 2.4C28.133 3.6 25.733 6.133 25.2 10H31V24H18z" fill="currentColor" opacity="0.15"/>
+          </svg>
+
+          <blockquote class="testimonials__text">
+            <p>"{t.quote}"</p>
+          </blockquote>
+
+          <figcaption class="testimonials__author">
+            <span class="testimonials__name">{t.name}</span>
+            <span class="testimonials__meta">{t.case} · {t.location}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .testimonials__card {
+    position: relative;
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-gold);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .testimonials__quote-mark {
+    color: var(--color-gold);
+    flex-shrink: 0;
+  }
+
+  .testimonials__text p {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-primary);
+    line-height: 1.6;
+  }
+
+  .testimonials__author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonials__name {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .testimonials__meta {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .testimonials__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

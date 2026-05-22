@@ -1,0 +1,204 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__main">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a href="/" class="footer__logo" aria-label="Burofax Legal">
+          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <rect width="22" height="22" rx="4" fill="#1B2B4B"/>
+            <path d="M5 7h12M5 11h8M5 15h10" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="footer__logo-text">Burofax Legal</span>
+        </a>
+        <p class="footer__tagline">
+          Servicio online de redacción jurídica y envío de burofax por abogado.
+        </p>
+        <div class="footer__contact-info">
+          <a href="/contacto" class="footer__contact-link">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 4.5l6 4 6-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Solicitar por formulario
+          </a>
+        </div>
+      </div>
+
+      <!-- Servicio -->
+      <nav class="footer__nav" aria-label="Servicio">
+        <h4 class="footer__nav-title">Servicio</h4>
+        <ul class="footer__nav-list">
+          <li><a href="/#servicio"      class="footer__nav-link">Qué es el servicio</a></li>
+          <li><a href="/#casos"         class="footer__nav-link">Casos de uso</a></li>
+          <li><a href="/#como-funciona" class="footer__nav-link">Cómo funciona</a></li>
+          <li><a href="/#precios"       class="footer__nav-link">Precios</a></li>
+          <li><a href="/#garantias"     class="footer__nav-link">Qué incluye</a></li>
+          <li><a href="/#faq"           class="footer__nav-link">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <!-- Legal -->
+      <nav class="footer__nav" aria-label="Información legal">
+        <h4 class="footer__nav-title">Legal</h4>
+        <ul class="footer__nav-list">
+          <li><a href="/aviso-legal"   class="footer__nav-link">Aviso legal</a></li>
+          <li><a href="/privacidad"    class="footer__nav-link">Política de privacidad</a></li>
+          <li><a href="/cookies"       class="footer__nav-link">Política de cookies</a></li>
+          <li><a href="/condiciones"   class="footer__nav-link">Condiciones del servicio</a></li>
+          <li><a href="/contacto"      class="footer__nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">© {year} Burofax Legal. Todos los derechos reservados.</p>
+      <p class="footer__disclaimer">
+        La información de esta web tiene carácter comercial e informativo. La contratación
+        del servicio no garantiza un resultado concreto frente al destinatario.
+        El servicio no supone el establecimiento de relación de cliente-abogado
+        más allá de la prestación contratada.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.85);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
+  }
+
+  .footer__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    padding-bottom: var(--space-10);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-8);
+  }
+
+  /* Brand */
+  .footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer__logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .footer__tagline {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    max-width: 280px;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer__contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer__contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+  }
+
+  .footer__contact-link:hover {
+    color: var(--color-gold-light);
+  }
+
+  /* Nav */
+  .footer__nav-title {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .footer__nav-link {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer__nav-link:hover {
+    color: #fff;
+  }
+
+  /* Bottom */
+  .footer__copyright {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-3);
+  }
+
+  .footer__disclaimer {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1.65;
+    max-width: 720px;
+  }
+
+  @media (min-width: 640px) {
+    .footer__main {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+    }
+
+    .footer__copyright {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer__main {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .footer__brand {
+      grid-column: auto;
+    }
+  }
+</style>

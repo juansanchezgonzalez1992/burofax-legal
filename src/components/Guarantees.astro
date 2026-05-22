@@ -1,0 +1,162 @@
+---
+const includes = [
+  'Redacción completa por abogado colegiado',
+  'Análisis básico de los hechos aportados',
+  'Revisión de datos del destinatario',
+  'Preparación y envío del burofax',
+  'Documentación acreditativa disponible',
+  'Una ronda de revisión del borrador antes del envío',
+  'Precio cerrado sin costes adicionales',
+];
+
+const excludes = [
+  'Representación procesal ni defensa en juicio',
+  'Tramitación con procurador',
+  'Asesoramiento jurídico continuado',
+  'Gestión de la respuesta del destinatario',
+  'Negociaciones posteriores al envío',
+  'Garantía de cobro o resultado frente al destinatario',
+  'Escritos de contestación a comunicaciones del destinatario',
+];
+---
+
+<section class="guarantees section" id="garantias">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>Claridad desde el principio</h2>
+      <p class="section-subtitle">
+        Transparencia total sobre lo que incluye y lo que no incluye el servicio.
+        Sin sorpresas, sin malentendidos.
+      </p>
+    </div>
+
+    <div class="guarantees__grid">
+      <!-- Bloque INCLUYE -->
+      <div class="guarantees__block guarantees__block--includes animate-on-scroll" data-animate="slide-right">
+        <div class="guarantees__block-header">
+          <span class="guarantees__block-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="14" r="12" stroke="#27AE60" stroke-width="1.8"/>
+              <path d="M8.5 14l4 4 7-8" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3 class="guarantees__block-title guarantees__block-title--includes">Lo que sí incluye</h3>
+        </div>
+        <ul class="guarantees__list feature-list">
+          {includes.map((item) => (
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l3.5 3.5 6.5-6.5" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Bloque NO INCLUYE -->
+      <div class="guarantees__block guarantees__block--excludes animate-on-scroll" data-animate="slide-left">
+        <div class="guarantees__block-header">
+          <span class="guarantees__block-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <circle cx="14" cy="14" r="12" stroke="#C9A84C" stroke-width="1.8"/>
+              <path d="M14 9v6M14 17.5v.5" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3 class="guarantees__block-title guarantees__block-title--excludes">Lo que no incluye</h3>
+        </div>
+        <ul class="guarantees__list feature-list">
+          {excludes.map((item) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" class="check-icon" style="color: var(--color-text-muted)">
+                <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5.5 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p class="guarantees__legal-note">
+          Este servicio no sustituye a la contratación de un abogado para procedimientos
+          judiciales o consultas de mayor envergadura.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .guarantees__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .guarantees__block {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  .guarantees__block--includes {
+    border-left: 4px solid #27AE60;
+  }
+
+  .guarantees__block--excludes {
+    border-left: 4px solid var(--color-gold);
+  }
+
+  .guarantees__block-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+  }
+
+  .guarantees__block-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .guarantees__block-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .guarantees__block-title--includes {
+    color: #1A6B3C;
+  }
+
+  .guarantees__block-title--excludes {
+    color: var(--color-primary);
+  }
+
+  .guarantees__list li {
+    color: var(--color-text);
+    font-size: var(--text-base);
+  }
+
+  .guarantees__legal-note {
+    margin-top: var(--space-6);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    padding: var(--space-4);
+    background: rgba(247, 245, 242, 0.8);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    font-style: italic;
+  }
+
+  @media (min-width: 1024px) {
+    .guarantees__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+    }
+  }
+</style>

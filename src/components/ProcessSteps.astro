@@ -1,0 +1,141 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Cuéntanos tu caso',
+    body: 'Cuéntanos el asunto: tus datos, una explicación breve del problema y qué quieres reclamar. Sin tecnicismos.',
+    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M4 6h20M4 6v18h20V6" stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 14h10M9 18h7" stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linecap="round"/></svg>`,
+  },
+  {
+    number: '02',
+    title: 'Revisamos la información',
+    body: 'Comprobamos que hay datos suficientes para preparar una comunicación formal con sentido jurídico. Si falta algo, te contactamos.',
+    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="14" cy="14" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="1.6"/><path d="M9 14l3.5 3.5 7-7" stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  },
+  {
+    number: '03',
+    title: 'Redactamos el burofax',
+    body: 'Un abogado prepara el texto con tono claro, firme y adaptado al objetivo de la reclamación. Podrás revisar el borrador.',
+    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M6 22l4-1 10-10-3-3L7 18 6 22z" stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linejoin="round"/><path d="M17 9l3 3" stroke="rgba(255,255,255,0.6)" stroke-width="1.6"/></svg>`,
+  },
+  {
+    number: '04',
+    title: 'Se envía y recibes justificantes',
+    body: 'Se tramita el envío y se te remite la documentación acreditativa disponible: prueba de contenido, fecha y destinatario.',
+    icon: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M4 14l16-8-5 8 5 8L4 14z" stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linejoin="round"/></svg>`,
+  },
+];
+---
+
+<section class="process section section--dark" id="como-funciona" aria-label="Cómo funciona el servicio">
+  <div class="container">
+    <div class="section-header animate-on-scroll" data-animate="fade-up">
+      <h2>Del formulario al burofax en 4 pasos</h2>
+      <p class="section-subtitle">
+        Un proceso claro, online y sin complicaciones. Desde que nos contactas
+        hasta que recibes los justificantes.
+      </p>
+    </div>
+
+    <div class="process__steps">
+      {steps.map((step, i) => (
+        <div
+          class={`process__step animate-on-scroll${i < steps.length - 1 ? ' process__step--connector' : ''}`}
+          data-animate="fade-up"
+          data-delay={String(i * 120)}
+        >
+          <div class="process__step-top">
+            <span class="process__step-number">{step.number}</span>
+            <span class="process__step-icon" set:html={step.icon} />
+          </div>
+          <h3 class="process__step-title">{step.title}</h3>
+          <p class="process__step-body">{step.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="process__cta animate-on-scroll" data-animate="fade-up" data-delay="400">
+      <a href="#contacto" class="btn btn--gold btn--lg">
+        Empezar ahora — desde 179 €
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process__steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+
+  .process__step {
+    position: relative;
+  }
+
+  .process__step-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .process__step-number {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-gold);
+    opacity: 0.8;
+    line-height: 1;
+    min-width: 2.5ch;
+  }
+
+  .process__step-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .process__step-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: var(--space-3);
+    line-height: 1.25;
+  }
+
+  .process__step-body {
+    font-size: var(--text-base);
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.7;
+  }
+
+  .process__cta {
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .process__steps {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-10) var(--space-8);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process__steps {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0 var(--space-6);
+    }
+
+    .process__step--connector::after {
+      content: '';
+      position: absolute;
+      top: 1.2rem;
+      right: calc(-1 * var(--space-3));
+      width: calc(var(--space-6) + var(--space-1));
+      height: 1px;
+      background: linear-gradient(90deg, rgba(201,168,76,0.4), rgba(201,168,76,0.1));
+    }
+  }
+</style>
