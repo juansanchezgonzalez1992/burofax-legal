@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://burofaxlegal.es/sitemap-index.xml
